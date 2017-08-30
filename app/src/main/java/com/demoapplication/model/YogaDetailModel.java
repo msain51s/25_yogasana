@@ -10,6 +10,16 @@ public class YogaDetailModel implements Serializable{
     public String yogaTitle;
     public String stepsOfYoga;
 
+    public int getGifOrNormal() {
+        return gifOrNormal;
+    }
+
+    public void setGifOrNormal(int gifOrNormal) {
+        this.gifOrNormal = gifOrNormal;
+    }
+
+    public int gifOrNormal;
+
     public String getYogaTitle() {
         return yogaTitle;
     }

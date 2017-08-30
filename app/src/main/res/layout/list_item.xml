@@ -12,16 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
-        <com.whygraphics.gifview.gif.GIFView
-            android:id="@+id/gif_view_thumb"
+        <ImageView
+            android:id="@+id/img_view_thumb"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="center"
-            android:background="@drawable/img_bg"
-            />
+            android:background="@drawable/img_bg"/>
         <TextView
             android:id="@+id/list_title"
-            android:layout_toRightOf="@+id/gif_view_thumb"
+            android:layout_toRightOf="@+id/img_view_thumb"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"

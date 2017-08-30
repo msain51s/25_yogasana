@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         list=new ArrayList<>();
         YogaDetailModel model=new YogaDetailModel();
+        model.setGifOrNormal(1);
         model.setImageName("surya_namaskar");
         model.setYogaTitle("Anulom-Vilom");
         model.setStepsOfYoga("My experience inspired me to pore over the scientific studies I'd collected in India as well as the West to identify and explain how yoga can both prevent disease and help you recover from it");

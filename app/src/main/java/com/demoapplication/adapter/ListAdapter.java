@@ -33,7 +33,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView title;
-        GIFView thumb_img;
+        ImageView thumb_img;
 
         public MyViewHolder(View view) {
             super(view);
@@ -42,7 +42,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             Typeface roboto_medium_typeface= Utils.getCustomFont(Application.mContext, FontType.ROBOTO_MEDIUM);
 
             title = (TextView) view.findViewById(R.id.list_title);
-            thumb_img= (GIFView) view.findViewById(R.id.gif_view_thumb);
+            thumb_img= (ImageView) view.findViewById(R.id.img_view_thumb);
 
             title.setTypeface(roboto_regular);
         }
@@ -64,7 +64,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     public void onBindViewHolder(ListAdapter.MyViewHolder holder, final int position) {
         YogaDetailModel model = list.get(position);
         holder.title.setText(model.getYogaTitle());
-        holder.thumb_img.setGifResource("asset:"+model.getImageName());
+    //        holder.thumb_img.setImageResource();
 
         holder.itemView.setTag(position);
 

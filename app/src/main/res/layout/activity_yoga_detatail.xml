@@ -41,11 +41,23 @@
  <RelativeLayout
      android:layout_width="match_parent"
      android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/imageLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+     <ImageView
+         android:id="@+id/detail_image"
+         android:layout_width="match_parent"
+         android:layout_height="200dp"
+         android:background="@color/white"
+         android:visibility="gone"/>
     <com.whygraphics.gifview.gif.GIFView
-        android:id="@+id/detail_image"
+        android:id="@+id/detail_image_gif"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        android:visibility="gone"/>
+    </RelativeLayout>
     <TextView
         android:id="@+id/yoga_steps"
         android:layout_width="match_parent"
@@ -57,13 +69,13 @@
         android:layout_marginBottom="10dp"
         android:textSize="20sp"
         android:text="@string/yoga_steps_text"
-        android:layout_below="@+id/detail_image"/>
+        android:layout_below="@+id/imageLayout"/>
     <TextView
         android:id="@+id/yoga_steps_detail_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
@@ -83,7 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
@@ -104,7 +116,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="17sp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
