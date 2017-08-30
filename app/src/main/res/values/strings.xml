@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoApplication</string>
+
+    <string name="yoga_steps_text">योग विधि  : </string>
+    <string name="yoga_benefit_text">योग के लाभ  :</string>
+    <string name="precautions_of_yoga_text">योग की सावधानी  :</string>
+</resources>
