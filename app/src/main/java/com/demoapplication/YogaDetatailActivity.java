@@ -34,7 +34,7 @@ public class YogaDetatailActivity extends AppCompatActivity {
         Bundle bundle=getIntent().getExtras();
         if(bundle!=null){
             model= (YogaDetailModel) bundle.get("model");
-            imageView_gif.setGifResource("asset:"+model.getImageName());
+            imageView_gif.setGifResource("asset:surya_namaskar");
             yogaSteps.setText(model.getStepsOfYoga());
             benefitsOfYoga.setText(model.getBenefitsOfYoga());
             precautions.setText(model.getPrecautions());

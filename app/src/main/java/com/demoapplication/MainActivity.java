@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.LayoutManager layoutManager;
     ListAdapter adapter;
     ArrayList<YogaDetailModel> list;
+    String []title_arr,yoga_steps_arr,yoga_benefits_arr,precautions_arr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,24 +33,35 @@ public class MainActivity extends AppCompatActivity {
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        list=new ArrayList<>();
-        YogaDetailModel model=new YogaDetailModel();
-        model.setGifOrNormal(1);
-        model.setImageName("surya_namaskar");
-        model.setYogaTitle("Anulom-Vilom");
-        model.setStepsOfYoga("My experience inspired me to pore over the scientific studies I'd collected in India as well as the West to identify and explain how yoga can both prevent disease and help you recover from it");
-        model.setBenefitsOfYoga("1. Builds muscle strength \n" +
-                                "2. Betters your bone health");
-        model.setPrecautions("1. Maintains your nervous system");
-        list.add(model);
+        getList();
 
-        adapter=new ListAdapter(list,this);
-        recyclerView.setAdapter(adapter);
     }
 
     /*Method to in initialize toolbar*/
     private void initToolBar(){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+    }
+
+    public void getList(){
+        YogaDetailModel model=null;
+        list=new ArrayList<>();
+        title_arr=getResources().getStringArray(R.array.title_array);
+        yoga_steps_arr=getResources().getStringArray(R.array.steps_array);
+        yoga_benefits_arr=getResources().getStringArray(R.array.benefits_array);
+        precautions_arr=getResources().getStringArray(R.array.precautions_array);
+
+        for(int i=0;i<title_arr.length;i++){
+            model=new YogaDetailModel();
+            model.setYogaTitle(title_arr[i]);
+            model.setStepsOfYoga(yoga_steps_arr[i]);
+            model.setBenefitsOfYoga(yoga_benefits_arr[i]);
+            model.setPrecautions(precautions_arr[i]);
+
+            list.add(model);
+        }
+
+        adapter=new ListAdapter(list,this);
+        recyclerView.setAdapter(adapter);
     }
 }
