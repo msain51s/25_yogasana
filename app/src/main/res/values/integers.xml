@@ -28,4 +28,32 @@
         <item>1</item>
         <item>0</item>
     </integer-array>
+
+    <!--Image Array-->
+    <integer-array name="thumb_img_array">
+        <item>@drawable/anulom_vilom</item>
+        <item>@drawable/kapalbhati</item>
+        <item>@drawable/vajrasana</item>
+        <item>@drawable/surya_namaskar</item>
+        <item>@drawable/ushtrasana</item>
+        <item>@drawable/konasana</item>
+        <item>@drawable/chakrasana</item>
+        <item>@drawable/setu_bandha</item>
+        <item>@drawable/tadasana</item>
+        <item>@drawable/dhanurasana</item>
+        <item>@drawable/padmasana</item>
+        <item>@drawable/pawan_muktasana</item>
+        <item>@drawable/paschimottanasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+        <item>@drawable/balasana</item>
+    </integer-array>
 </resources>

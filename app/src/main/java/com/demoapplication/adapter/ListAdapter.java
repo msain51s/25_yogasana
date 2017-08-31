@@ -2,6 +2,7 @@ package com.demoapplication.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
@@ -29,7 +30,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
     private List<YogaDetailModel> list;
     private Activity mContext;
-
+    TypedArray tp;
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView title;
@@ -50,6 +51,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     public ListAdapter(List<YogaDetailModel> list,Activity mContext) {
         this.list = list;
         this.mContext=mContext;
+        tp=mContext.getResources().obtainTypedArray(R.array.thumb_img_array);
     }
     @Override
     public ListAdapter.MyViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
@@ -64,7 +66,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     public void onBindViewHolder(ListAdapter.MyViewHolder holder, final int position) {
         YogaDetailModel model = list.get(position);
         holder.title.setText(model.getYogaTitle());
-    //        holder.thumb_img.setImageResource();
+        holder.thumb_img.setImageResource(tp.getResourceId(position,-1));
 
         holder.itemView.setTag(position);
 
