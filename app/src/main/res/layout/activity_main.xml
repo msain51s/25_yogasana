@@ -18,7 +18,8 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/toolbar_color"
             android:elevation="4dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay" >
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:transitionName="toolbar">
 
          <TextView
              android:id="@+id/toolbar_title_text"

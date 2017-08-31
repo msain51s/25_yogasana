@@ -34,15 +34,16 @@ public class YogaDetatailActivity extends AppCompatActivity {
         Bundle bundle=getIntent().getExtras();
         if(bundle!=null){
             model= (YogaDetailModel) bundle.get("model");
-            imageView_gif.setGifResource("asset:surya_namaskar");
             yogaSteps.setText(model.getStepsOfYoga());
             benefitsOfYoga.setText(model.getBenefitsOfYoga());
             precautions.setText(model.getPrecautions());
 
             toolbar_title_text.setText(model.getYogaTitle());
 
-            if(model.getGifOrNormal()==1)
+            if(model.getGifOrNormal()==1) {
                 imageView_gif.setVisibility(View.VISIBLE);
+                imageView_gif.setGifResource("asset:_"+model.getPosition());
+            }
             else
                 imageView.setVisibility(View.VISIBLE);
         }

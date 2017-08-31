@@ -1,5 +1,6 @@
 package com.demoapplication;
 
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void getList(){
         YogaDetailModel model=null;
         list=new ArrayList<>();
+        int[] ar = getResources().getIntArray(R.array.img_or_gif_indication_array);
         title_arr=getResources().getStringArray(R.array.title_array);
         yoga_steps_arr=getResources().getStringArray(R.array.steps_array);
         yoga_benefits_arr=getResources().getStringArray(R.array.benefits_array);
@@ -57,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
             model.setStepsOfYoga(yoga_steps_arr[i]);
             model.setBenefitsOfYoga(yoga_benefits_arr[i]);
             model.setPrecautions(precautions_arr[i]);
+            model.setGifOrNormal(ar[i]);
+            model.setPosition(i);
 
             list.add(model);
         }

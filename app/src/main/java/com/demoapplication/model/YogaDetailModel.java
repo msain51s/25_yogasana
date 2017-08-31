@@ -20,6 +20,16 @@ public class YogaDetailModel implements Serializable{
 
     public int gifOrNormal;
 
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    public int position;
+
     public String getYogaTitle() {
         return yogaTitle;
     }
