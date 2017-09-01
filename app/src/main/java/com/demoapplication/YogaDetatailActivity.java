@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.demoapplication.model.YogaDetailModel;
 import com.whygraphics.gifview.gif.GIFView;
 
@@ -44,8 +45,12 @@ public class YogaDetatailActivity extends AppCompatActivity {
                 imageView_gif.setVisibility(View.VISIBLE);
                 imageView_gif.setGifResource("asset:_"+model.getPosition());
             }
-            else
+            else {
                 imageView.setVisibility(View.VISIBLE);
+                Glide.with(this)
+                        .load(bundle.getInt("image"))
+                        .into(imageView);
+            }
         }
     }
 

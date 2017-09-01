@@ -1,6 +1,9 @@
 package com.demoapplication;
 
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     ListAdapter adapter;
     ArrayList<YogaDetailModel> list;
     String []title_arr,yoga_steps_arr,yoga_benefits_arr,precautions_arr;
+    TypedArray tp;
+    int[] images;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
         layoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        getList();
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                getList();
+            }
+        });
 
     }
 
@@ -65,7 +75,17 @@ public class MainActivity extends AppCompatActivity {
             list.add(model);
         }
 
-        adapter=new ListAdapter(list,this);
+        tp=getResources().obtainTypedArray(R.array.thumb_img_array);
+        images=new int[tp.length()];
+        for(int i=0;i<images.length;i++){
+            int id=tp.getResourceId(i,-1);
+            if(id!=-1){
+                images[i]= tp.getResourceId(i,-1);
+            }
+        }
+        tp.recycle();
+
+        adapter=new ListAdapter(list,this,images);
         recyclerView.setAdapter(adapter);
     }
 }

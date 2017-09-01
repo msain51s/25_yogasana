@@ -13,24 +13,24 @@
         <item>1</item>
         <item>1</item>
         <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
         <item>0</item>
         <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
         <item>0</item>
         <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
+        <item>1</item>
         <item>1</item>
         <item>0</item>
     </integer-array>
 
     <!--Image Array-->
-    <integer-array name="thumb_img_array">
+    <array name="thumb_img_array">
         <item>@drawable/anulom_vilom</item>
         <item>@drawable/kapalbhati</item>
         <item>@drawable/vajrasana</item>
@@ -55,5 +55,5 @@
         <item>@drawable/balasana</item>
         <item>@drawable/balasana</item>
         <item>@drawable/balasana</item>
-    </integer-array>
+    </array>
 </resources>

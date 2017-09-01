@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.demoapplication.R;
 import com.demoapplication.YogaDetatailActivity;
 import com.demoapplication.model.YogaDetailModel;
@@ -30,8 +33,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
     private List<YogaDetailModel> list;
     private Activity mContext;
-    TypedArray tp;
-
+    int[] images;
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView title;
         ImageView thumb_img;
@@ -48,10 +50,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             title.setTypeface(roboto_regular);
         }
     }
-    public ListAdapter(List<YogaDetailModel> list,Activity mContext) {
+    public ListAdapter(List<YogaDetailModel> list,Activity mContext,int[] images) {
         this.list = list;
         this.mContext=mContext;
-        tp=mContext.getResources().obtainTypedArray(R.array.thumb_img_array);
+        this.images=images;
     }
     @Override
     public ListAdapter.MyViewHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
@@ -66,10 +68,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     public void onBindViewHolder(ListAdapter.MyViewHolder holder, final int position) {
         YogaDetailModel model = list.get(position);
         holder.title.setText(model.getYogaTitle());
-        holder.thumb_img.setImageResource(tp.getResourceId(position,-1));
-
+    //    holder.thumb_img.setImageResource(images[position]);
+        Glide.with(mContext)
+                .load(images[position])
+                .into(holder.thumb_img);
         holder.itemView.setTag(position);
-
     }
 
     @Override
@@ -81,6 +84,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     public void onClick(View view) {
         Intent intent=new Intent(mContext, YogaDetatailActivity.class);
         intent.putExtra("model",list.get((Integer) view.getTag()));
+        intent.putExtra("image",images[(int) view.getTag()]);
         mContext.startActivity(intent);
     }
 }
