@@ -4,4 +4,8 @@
     <string name="yoga_steps_text">योग विधि  : </string>
     <string name="yoga_benefit_text">योग के लाभ  :</string>
     <string name="precautions_of_yoga_text">योग की सावधानी  :</string>
+
+    <!-- AdMob ad unit id -->
+    <string name="banner_home_top">ca-app-pub-4221210703574924/3692182016</string>
+    <string name="interstitial_detail">ca-app-pub-4221210703574924/8795021807</string>
 </resources>

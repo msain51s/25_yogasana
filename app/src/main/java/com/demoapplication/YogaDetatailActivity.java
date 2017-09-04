@@ -1,5 +1,6 @@
 package com.demoapplication;
 
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -10,27 +11,54 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.demoapplication.model.YogaDetailModel;
+import com.demoapplication.utility.Application;
+import com.demoapplication.utility.FontType;
+import com.demoapplication.utility.Utils;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.whygraphics.gifview.gif.GIFView;
 
 public class YogaDetatailActivity extends AppCompatActivity {
+    InterstitialAd mAdMobInterstitialAd;
     Toolbar toolbar;
     TextView toolbar_title_text;
     GIFView imageView_gif;
     ImageView imageView;
     TextView yogaSteps,benefitsOfYoga,precautions;
     YogaDetailModel model;
+    Typeface roboto_regular;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yoga_detatail);
         initToolBar();
 
+        roboto_regular= Utils.getCustomFont(Application.mContext, FontType.ROBOTO_REGULAR);
         toolbar_title_text= (TextView) findViewById(R.id.toolbar_title_text);
         imageView_gif= (GIFView) findViewById(R.id.detail_image_gif);
         yogaSteps= (TextView) findViewById(R.id.yoga_steps_detail_text);
         benefitsOfYoga= (TextView) findViewById(R.id.benefits_of_yoga_detail_text);
         precautions= (TextView) findViewById(R.id.precautions_of_yoga_detail_text);
         imageView= (ImageView) findViewById(R.id.detail_image);
+
+        yogaSteps.setTypeface(roboto_regular);
+        benefitsOfYoga.setTypeface(roboto_regular);
+        precautions.setTypeface(roboto_regular);
+
+        mAdMobInterstitialAd = new InterstitialAd(this);
+        mAdMobInterstitialAd.setAdUnitId(getString(R.string.interstitial_detail));
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("26D932C1F8FA1407702FC623889D39A7")// Add your real device id here
+                .build();
+
+        mAdMobInterstitialAd.loadAd(adRequest);
+        mAdMobInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitialAd();
+            }
+        });
 
         Bundle bundle=getIntent().getExtras();
         if(bundle!=null){
@@ -59,6 +87,12 @@ public class YogaDetatailActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    private void showInterstitialAd() {
+        if (mAdMobInterstitialAd.isLoaded()) {
+            mAdMobInterstitialAd.show();
+        }
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

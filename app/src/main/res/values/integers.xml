@@ -3,7 +3,7 @@
     <!--Image or Gif indication array-->
 
     <integer-array name="img_or_gif_indication_array">
-        <item>1</item>
+        <item>0</item>
         <item>0</item>
         <item>0</item>
         <item>1</item>
@@ -45,15 +45,15 @@
         <item>@drawable/pawan_muktasana</item>
         <item>@drawable/paschimottanasana</item>
         <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
-        <item>@drawable/balasana</item>
+        <item>@drawable/mandukasana</item>
+        <item>@drawable/makrasana</item>
+        <item>@drawable/bhujangasana</item>
+        <item>@drawable/sarvangasana</item>
+        <item>@drawable/halasana</item>
+        <item>@drawable/balayam</item>
+        <item>@drawable/kunjal_kriya</item>
+        <item>@drawable/ardhmatsyasana</item>
+        <item>@drawable/naukasana</item>
+        <item>@drawable/jala_neti</item>
     </array>
 </resources>

@@ -13,11 +13,14 @@ import android.widget.TextView;
 
 import com.demoapplication.adapter.ListAdapter;
 import com.demoapplication.model.YogaDetailModel;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AdView mAdMobAdView;
     Toolbar toolbar;
     TextView toolbar_title_text;
     RecyclerView recyclerView;
@@ -33,6 +36,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initToolBar();
+
+        mAdMobAdView = (AdView) findViewById(R.id.admob_adview);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("26D932C1F8FA1407702FC623889D39A7")// Add your real device id here
+                .build();
+        mAdMobAdView.loadAd(adRequest);
+
+
         toolbar_title_text= (TextView) findViewById(R.id.toolbar_title_text);
         toolbar_title_text.setText("25 योग आसन");
         recyclerView= (RecyclerView) findViewById(R.id.recycler_view);

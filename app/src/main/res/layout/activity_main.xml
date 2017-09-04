@@ -43,6 +43,13 @@
         android:layout_margin="7dp"
         android:layout_below="@+id/appBarLayout"
         />
-
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/admob_adview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="@string/banner_home_top" />
 
 </RelativeLayout>

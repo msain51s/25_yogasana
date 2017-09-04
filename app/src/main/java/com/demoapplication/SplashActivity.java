@@ -28,13 +28,13 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent intent = new Intent(SplashActivity.this, MainActivity.class);
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+               /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                     ActivityOptionsCompat options = ActivityOptionsCompat.
                             makeSceneTransitionAnimation(SplashActivity.this, splash_bg_layout, "toolbar");
                     startActivity(intent, options.toBundle());
-                }else{
+                }else{*/
                     startActivity(intent);
-                }
+            //    }
             }
         },4000);
     }

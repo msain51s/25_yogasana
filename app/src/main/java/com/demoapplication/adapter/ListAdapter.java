@@ -40,9 +40,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
         public MyViewHolder(View view) {
             super(view);
-            Typeface roboto_light_typeface= Utils.getCustomFont(Application.mContext, FontType.ROBOTO_LIGHT);
             Typeface roboto_regular= Utils.getCustomFont(Application.mContext, FontType.ROBOTO_REGULAR);
-            Typeface roboto_medium_typeface= Utils.getCustomFont(Application.mContext, FontType.ROBOTO_MEDIUM);
 
             title = (TextView) view.findViewById(R.id.list_title);
             thumb_img= (ImageView) view.findViewById(R.id.img_view_thumb);
