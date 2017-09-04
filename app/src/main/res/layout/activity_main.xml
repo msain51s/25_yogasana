@@ -10,6 +10,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:transitionName="toolbar"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
@@ -19,7 +20,7 @@
             android:background="@color/toolbar_color"
             android:elevation="4dp"
             app:popupTheme="@style/AppTheme.PopupOverlay"
-            android:transitionName="toolbar">
+            >
 
          <TextView
              android:id="@+id/toolbar_title_text"

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.demoapplication.SplashActivity">
   <RelativeLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
       android:id="@+id/splash_bg_layout"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:background="@color/toolbar_color"
-      android:transitionName="toolbar">
+      android:transitionName="toolbar"
+      tools:context="com.demoapplication.SplashActivity">
  <TextView
      android:id="@+id/splash_title"
      android:layout_width="match_parent"
@@ -28,5 +26,3 @@
           android:layout_centerInParent="true"
           />
   </RelativeLayout>
-
-</android.support.constraint.ConstraintLayout>
